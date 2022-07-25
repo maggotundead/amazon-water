@@ -1,0 +1,22 @@
+.title {
+    font-family: $serif-font;
+    letter-spacing: 0.02em;
+    &.block-title {
+        font-weight: 700;
+    }
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 50px;
+    padding: 0 48px;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 500;
+    background: linear-gradient(266.57deg, #05A06B -2.07%, #0EBE81 107.62%);
+    box-shadow: 0px 0px 22px rgba(13, 187, 127, 0.46);
+    transition: $duration;
+}
