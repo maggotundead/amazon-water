@@ -65,12 +65,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // sticky header
-// window.onscroll = function() {toggleHeaderBg()};
-// const header = document.querySelector('header');
-// window.pageYOffset && header.classList.add('sticky')
-// const toggleHeaderBg = () => {
-//     window.pageYOffset > 0 ? header.classList.add('sticky') : header.classList.remove('sticky');
-// }
+window.onscroll = function() {toggleHeader()};
+const header = document.querySelector('header');
+window.pageYOffset && header.classList.add('sticky')
+const toggleHeader = () => {
+    window.pageYOffset > 0 ? header.classList.add('sticky') : header.classList.remove('sticky');
+}
 
 
 //modal
@@ -96,13 +96,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 //     });
 // });
 
-const cart = document.querySelector('.cart');
-document.querySelector('.cart-btn').addEventListener('click', () => {
-    cart.classList.toggle('open');
-});
+// const cart = document.querySelector('.cart');
+// document.querySelector('.cart-btn').addEventListener('click', () => {
+//     cart.classList.toggle('open');
+// });
 
-document.addEventListener('click', function(event) {
-    if ( cart.classList.contains('open') && event.target !== cart && !cart.contains(event.target) ) {
-        cart.classList.remove('open');
-    }
-});
+// document.addEventListener('click', function(event) {
+//     if ( cart.classList.contains('open') && event.target !== cart && !cart.contains(event.target) ) {
+//         cart.classList.remove('open');
+//     }
+// });

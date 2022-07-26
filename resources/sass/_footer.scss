@@ -1,0 +1,95 @@
+.block-subscribe-footer {
+    min-height: initial;
+    .container {
+        &:nth-child(3) {
+            max-width: 100%;
+            border-top: 1px solid rgba(187, 187, 187, .4);
+        }
+    }
+    .subscribe {
+        padding-top: 140px;
+        padding-bottom: 140px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &-form {
+            margin-top: 48px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        &-input {
+            margin-right: 24px;
+            padding: 0 24px;
+            border-radius: 0;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            filter: drop-shadow(2px 2px 12px rgba(0, 0, 0, 0.1));
+            font-size: 24px;
+            color: #fff;
+            background-color: transparent;
+            width: 100%;
+            max-width: 440px;
+            display: block;
+            height: 50px;
+            &::placeholder {
+                opacity: .83;
+                font-size: 24px;
+                font-size: inherit;
+            }
+        }
+    }
+    .title {
+        &.block-title {
+            + .descr {
+                margin-top: 24px;
+                font-size: 24px;
+                max-width: 690px;
+                text-align: center;
+            }
+        }
+    }
+    .footer {
+        padding-top: 64px;
+        padding-bottom: 64px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 870px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .footer-group {
+        &-content {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 12px;
+            line-height: 14px;
+        }
+        h4 {
+            font-size: 18px;
+            line-height: 22px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        address {
+            font-style: normal;
+            max-width: 166px;
+        }
+        a {
+            &:not(:last-child) {
+                margin-bottom: 12px;
+            }
+        }
+    }
+    .socials {
+        display: flex;
+        align-items: center;
+        a {
+            &:not(:last-child) {
+                margin-bottom: 0;
+                margin-right: 12px;
+            }
+        }
+    }
+}
