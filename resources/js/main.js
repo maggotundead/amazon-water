@@ -1,9 +1,9 @@
 
-const relatedSwiper = new Swiper('.js-related-swiper', {
-    slidesPerView: 'auto',
+const teamSwiper = new Swiper('.js-team-swiper', {
+    slidesPerView: 3,
     loop: true,
     draggable: true,
-    spaceBetween: 20,
+    spaceBetween: 75,
     // noSwiping: true,
     autoplay: {
         disableOnInteraction: true,
@@ -19,13 +19,13 @@ const relatedSwiper = new Swiper('.js-related-swiper', {
         onlyInViewport: true
     },
     pagination: {
-        el: '.swiper-pagination',
+        el: '#team-pagination',
         type: 'bullets',
         clickable: true,
     },
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        prevEl: '#team-prev',
+        nextEl: '#team-next',
     },
 });
 
