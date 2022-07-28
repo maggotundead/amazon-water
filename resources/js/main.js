@@ -29,26 +29,6 @@ const teamSwiper = new Swiper('.js-team-swiper', {
     },
 });
 
-const salesSwiper = new Swiper('.js-sales-swiper', {
-    slidesPerView: 1,
-    loop: true,
-    draggable: true,
-    // noSwiping: true,
-    autoplay: {
-        disableOnInteraction: true,
-        pauseOnMouseEnter: true,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-});
-
 document.querySelector('.burger-btn').addEventListener('click', () => {
     document.querySelector('body').classList.toggle('mobile-menu-open');
 });
@@ -106,3 +86,34 @@ const toggleHeader = () => {
 //         cart.classList.remove('open');
 //     }
 // });
+
+// faq tabs
+    const faqTabs = document.querySelector('.faq-tabs');
+    if ( faqTabs ) {
+        const tabElem = faqTabs.querySelectorAll('.tab');
+        const tabBtn = faqTabs.querySelectorAll('.tab-selector');
+
+        tabBtn.forEach( (btn, index) => {
+            btn.onclick = function() {
+                tabBtn.forEach( btn => btn.classList.remove('active') );
+                this.classList.add('active');
+
+                tabElem.forEach( tab => tab.classList.remove('active') );
+                tabElem[index].classList.add('active');
+            }
+        });
+
+        tabElem.forEach(tab => {
+            const faqItem = tab.querySelectorAll('.faq-item');
+            faqItem.forEach( (item, index) => {
+                item.onclick = function(event) {
+                    if ( event.target.tagName.toLowerCase() === 'a' )  {
+                        return;
+                    }
+                    this.classList.toggle('active');
+                }
+            });
+        });
+
+    }
+// faq tabs

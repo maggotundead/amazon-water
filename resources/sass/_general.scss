@@ -28,6 +28,7 @@ body {
     &.menu-open {
         overflow: hidden;
     }
+
 }
 a {
     text-decoration: none;
@@ -110,6 +111,12 @@ iframe {
     flex-direction: column;
     min-height: 100vh;
     min-height: -webkit-fill-available;
+    &.page-ambassador {
+        background-image: url('../img/bg/bg-10.jpg');
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
 
 .content {
@@ -142,4 +149,8 @@ main {
     @include mobile {
         padding: 0 $container-padding-x-mobile;
     }
+}
+
+.text-centered {
+    text-align: center;
 }

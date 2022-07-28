@@ -28,12 +28,9 @@
 								<a href="/" class="menu-link">Brand ambassador</a>
 							</li>
 							<li class="menu-elem">
-								<!-- <a href="/" class="logo">
+								<a href="/" class="logo">
 									<img src="img/logo.png" alt="">
-								</a> -->
-								<div class="logo">
-									<img src="img/logo.png" alt="">
-								</div>
+								</a>
 							</li>
 							<li class="menu-elem">
 								<a href="/" class="menu-link">About us</a>
@@ -59,54 +56,109 @@
 			</header>
 
 			<main class="content">
-				<section class="block block-homescreen">
-					<div class="bg">
+                <section class="block block-banner-text text-centered">
+                    <div class="bg">
 						<img src="img/bg/bg-1.jpg" alt="" loading="lazy">
 					</div>
-					<div class="container">
-						<div class="text">
-							<h1 class="title page-title">Amazon Spring Waters</h1>
-							<div class="descr">
-								The first bottled water brand  from Brazil, with a mission and brand built on the premise of preservation the world’s “lungs” - the Amazon Rainforest
-							</div>
-							<a href="/" class="btn" target="_blank" title="buy on Amazon">Buy now</a>
-						</div>
-						<figure class="figure">
-							<img src="img/temp/homescreen-figure.png" alt="" loading="lazy">
-						</figure>
-						<div class="bottom-arrow">
+                    <div class="container">
+						<h1 class="title page-title">Our Pledge</h1>
+                        <div class="descr">
+                            ASW established a successful model of public – private partnership that combines elements of non-profit charitable contribution, private enterprise, and governmental policy to accomplish a common goal.
+                        </div>
+                        <div class="bottom-arrow">
 							<svg width="14" height="19"><use xlink:href="#bottom-arrow"></use></svg>
 						</div>
-					</div>
-				</section>
+                    </div>
+                </section>
 
-				<section class="block block-images-text">
-					<div class="container">
-						<a class="image-link">
-							<img src="img/temp/brand-banner-1.jpg" alt="" loading="lazy">
-							<h3 class="title">Our story</h3>
-						</a>
-						<div class="text">
-							<h2 class="title block-title">Our brand</h2>
-							<div class="descr">
-								<p>
-									Amazon Spring Waters presents the first global bottled water brand from Brazil, with a mission and brand built on the premise of saving the world’s “lungs”, the Amazon Rainforest.
-								</p>
-								<p>
-									The brand has been created to inspire a feeling of goodwill in consumers, making their choice to purchase a bottle of Amazon Spring Waters a choice to heal the Amazon Rainforest and in turn contribute to a healthier global environment.
-								</p>
-							</div>
-						</div>
-						<a class="image-link">
-							<img src="img/temp/brand-banner-2.jpg" alt="" loading="lazy">
-							<h3 class="title">Conservation international</h3>
-						</a>
-						<a class="image-link">
-							<img src="img/temp/brand-banner-3.jpg" alt="" loading="lazy">
-							<h3 class="title">Water foundation</h3>
-						</a>
-					</div>
-				</section>
+                <section class="block block-sustainable-future">
+                    <div class="container">
+                        <h2 class="title block-title text-centered">Sustainable future</h2>
+                        <div class="text-group">
+                            <div class="image">
+                                <img src="img/temp/future-banner-1.jpg" alt="" loading="lazy">
+                            </div>
+                            <div class="text">
+                                <h3 class="title">Environmental Protection</h3>
+                                <div class="descr">
+                                    ASW is proud to present its 330mL, 500mL, 1000mL made of 100% fully recyclable plastic bottles. ASW’s intent is to adopt fully biodegradable plastic for its packaging to ensure its products do not cause environmental damage.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-group">
+                            <div class="image">
+                                <img src="img/temp/future-banner-2.jpg" alt="" loading="lazy">
+                            </div>
+                            <div class="text">
+                                <h3 class="title">Rainforest foundation</h3>
+                                <div class="descr">
+                                    ASW is committed to developing a consumer donation program, with the conservation platform sanctioned by the Brazilian government, so that at least $.20 of every one liter purchased is destined to protect the Amazon Rainforest.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="block block-question-form">
+                    <div class="bg">
+                        <img src="img/bg/bg-3.jpg" alt="" loading="lazy">
+                    </div>
+                    <div class="container">
+                        <h2 class="title block-title text-centered">Do you have a question?</h2>
+                        <form action="/" class="question-form">
+                            <div class="form-content">
+                                <div class="input-group">
+                                    <label for="first-name-input" class="group-label">First name</label>
+                                    <div class="input-wrapper">
+                                        <input type="text" placeholder=" " id="first-name-input">
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="last-name-input" class="group-label">Last name</label>
+                                    <div class="input-wrapper">
+                                        <input type="text" placeholder=" " id="last-name-input">
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="email-input" class="group-label">E-mail</label>
+                                    <div class="input-wrapper">
+                                        <input type="text" placeholder=" " id="email-input">
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="client-type=select" class="group-label">I am a</label>
+                                    <div class="input-wrapper select-wrapper">
+                                        <select name="" id="client-type-select">
+                                            <option value="" selected>Consumer</option>
+                                            <option value="">Consumer2</option>
+                                            <option value="">Consumer3</option>
+                                            <option value="">Consumer4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="comment-textarea" class="group-label">Comment</label>
+                                    <div class="input-wrapper textarea-wrapper">
+                                        <textarea name="" id="comment-textarea" placeholder="Write your comment"></textarea>
+                                    </div>
+                                </div>
+                                <div class="input-group checkbox-group">
+                                    <label class="checkbox-wrapper">
+                                        <input type="checkbox" hidden checked>
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Customer</span>
+                                    </label>
+                                    <label class="checkbox-wrapper">
+                                        <input type="checkbox" hidden checked>
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Сheckbox</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn submit">submit</button>
+                        </form>
+                    </div>
+                </section>
 			</main>
 
 			<footer class="block block-subscribe-footer">
