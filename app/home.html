@@ -177,19 +177,26 @@
 			</header>
 
 			<main class="content">
-				<section class="block block-homescreen">
+				<section class="block block-homescreen wow animate__fadeIn" data-wow-delay="2s">
 					<div class="bg">
-						<img src="img/bg/bg-1.jpg" alt="" loading="lazy">
+						<!-- <img src="img/bg/bg-1.jpg" alt="" loading="lazy"> -->
+						<video id="video-banner" playsinline autoplay muted loop>
+							<source src="video/video-2640.mp4" type="video/mp4" media="all and (min-width: 1921px)">
+							<source src="video/video-1920.mp4" type="video/mp4" media="all and (max-width: 1920px)">
+							<source src="video/video-1440.mp4" type="video/mp4" media="all and (max-width: 1440px)">
+							<source src="video/video-1024.mp4" type="video/mp4" media="all and (max-width: 1024px)">
+							<source src="video/video-768.mp4" type="video/mp4" media="all and (max-width: 768px)">
+						</video>
 					</div>
 					<div class="container">
 						<div class="text">
-							<h1 class="title page-title">Amazon Spring Waters</h1>
-							<div class="descr">
+							<h1 class="title page-title wow animate__fadeIn" data-wow-delay="2.5s">Amazon Spring Waters</h1>
+							<div class="descr wow animate__fadeInUp" data-wow-delay="3s">
 								The first bottled water brand  from Brazil, with a mission and brand built on the premise of preservation the world’s “lungs” - the Amazon Rainforest
 							</div>
-							<a href="/" class="btn" target="_blank" title="buy on Amazon">Buy now</a>
+							<a href="/" class="btn wow animate__fadeInUp" data-wow-delay="3.5s" target="_blank" title="buy on Amazon">Buy now</a>
 						</div>
-						<figure class="figure">
+						<figure class="figure wow animate__fadeIn" data-wow-delay="4s">
 							<img src="img/temp/homescreen-figure.png" alt="" loading="lazy">
 						</figure>
 						<div class="bottom-arrow">
@@ -198,7 +205,7 @@
 					</div>
 				</section>
 
-				<section class="block block-product-slider">
+				<section class="block block-product-slider wow animate__fadeInUp" data-wow-delay=".5s" data-wow-offset="50">
 					<div class="bg">
 						<img src="img/bg/bg-11.jpg" alt="" loading="lazy">
 					</div>
@@ -283,15 +290,15 @@
 					</div>
 				</section>
 
-				<section class="block block-images-text">
+				<section class="block block-images-text wow animate__fadeInUp" data-wow-delay=".5s">
 					<div class="container">
-						<a class="image-link">
+						<a class="image-link wow animate__fadeInLeft" data-wow-delay="1s">
 							<img src="img/temp/brand-banner-1.jpg" alt="" loading="lazy">
 							<h3 class="title">Our story</h3>
 						</a>
-						<div class="text">
-							<h2 class="title block-title">Our brand</h2>
-							<div class="descr">
+						<div class="text wow animate__fadeInRight" data-wow-delay="2s">
+							<h2 class="title block-title wow animate__fadeIn" data-wow-delay="1s">Our brand</h2>
+							<div class="descr wow animate__fadeInUp" data-wow-delay="1.5s">
 								<p>
 									Amazon Spring Waters presents the first global bottled water brand from Brazil, with a mission and brand built on the premise of saving the world’s “lungs”, the Amazon Rainforest.
 								</p>
@@ -300,11 +307,11 @@
 								</p>
 							</div>
 						</div>
-						<a class="image-link">
+						<a class="image-link wow animate__fadeInUp" data-wow-delay="2.5s">
 							<img src="img/temp/brand-banner-2.jpg" alt="" loading="lazy">
 							<h3 class="title">Conservation international</h3>
 						</a>
-						<a class="image-link">
+						<a class="image-link wow animate__fadeInUp" data-wow-delay="3s">
 							<img src="img/temp/brand-banner-3.jpg" alt="" loading="lazy">
 							<h3 class="title">Water foundation</h3>
 						</a>
@@ -312,17 +319,20 @@
 				</section>
 			</main>
 
-			<footer class="block block-subscribe-footer">
+			<footer class="block block-subscribe-footer wow animate__fadeInUp" data-wow-delay=".5s" data-wow-offset="30">
+				<!-- на странице амбасадор див бг не выводить -->
 				<div class="bg">
 					<img src="img/bg/bg-5.jpg" alt="" loading="lazy">
 				</div>
+				<!-- на странице амбасадор див бг не выводить -->
+
 				<div class="container">
 					<div class="subscribe">
-						<h2 class="title block-title text-centered">Be the first to know our news!</h2>
-						<div class="descr text-centered">
+						<h2 class="title block-title text-centered wow animate__fadeIn" data-wow-delay="1s">Be the first to know our news!</h2>
+						<div class="descr text-centered wow animate__fadeInUp" data-wow-delay="1.5s">
 							Once a month you will hear about our latest features and hottest news. And no spam, of course.
 						</div>
-						<form class="subscribe-form">
+						<form class="subscribe-form wow animate__fadeInUp" data-wow-delay="2s">
 							<input type="email" placeholder="E-mail" class="subscribe-input">
 							<button type="submit" class="btn">Subscribe</button>
 						</form>

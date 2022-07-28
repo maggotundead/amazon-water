@@ -21,10 +21,10 @@ const teamSwiper = new Swiper('.js-team-swiper', {
     draggable: true,
     spaceBetween: 75,
     // noSwiping: true,
-    autoplay: {
-        disableOnInteraction: true,
-        pauseOnMouseEnter: true,
-    },
+    // autoplay: {
+    //     disableOnInteraction: true,
+    //     pauseOnMouseEnter: true,
+    // },
     mousewheel: {
         forceToAxis: true,
     },
@@ -85,8 +85,8 @@ const productInfoSwiper = new Swiper('.js-product-info-swiper', {
         nextEl: '#product-next',
     },
 });
-productBottleSwiper[0].controller.control = productInfoSwiper;
-productInfoSwiper[1].controller.control = productBottleSwiper;
+// productBottleSwiper.controller.control = productInfoSwiper;
+// productInfoSwiper.controller.control = productBottleSwiper;
 // product slider
 
 
@@ -178,3 +178,15 @@ const toggleHeader = () => {
 
     }
 // faq tabs
+
+let wow = new WOW({
+    boxClass:     'wow',
+    animateClass: 'animate__animated',
+    offset:       0,
+    mobile:       true,
+    live:         true,
+    callback:     function(box) {
+    },
+    scrollContainer: null
+});
+wow.init();

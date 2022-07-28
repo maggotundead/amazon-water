@@ -3,6 +3,7 @@
     min-height: css-max(800px, 100vh);
     position: relative;
     display: flex;
+    overflow: hidden;
     .bg {
         position: absolute;
         top: 0;
@@ -11,11 +12,18 @@
         bottom: 0;
         z-index: 1;
         pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+        // video {
+        //     width: 100%;
+        //     height: 100%;
+        // }
     }
     .container {
         z-index: 2;
