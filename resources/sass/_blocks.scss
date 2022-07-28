@@ -51,6 +51,115 @@
     }
 }
 
+.block-product-slider {
+    padding-top: 136px;
+    padding-bottom: 104px;
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+    .product-info-slider {
+        width: 424px;
+        flex-shrink: 0;
+        background-color: $dark-green-bg;
+        padding: 64px 32px 55px;
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+    }
+    .product-bottle-slider {
+        width: calc(100% - 424px);
+        .swiper-slide {
+            width: auto;
+            height: auto;
+            opacity: .7;
+            transition: $duration;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            &::before {
+                content: '';
+                width: 180px;
+                height: 32px;
+                // background: rgba(255, 255, 255, 0.3);
+                background-color: #fff;
+                // filter: blur(52px);
+                filter: blur(24px);
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -18px;
+                z-index: 1;
+                transition: $duration;
+                opacity: 0;
+            }
+            &-active {
+                opacity: 1;
+                &::before {
+                    opacity: 1;
+                }
+            }
+            img {
+                position: relative;
+                z-index: 2;
+            }
+        }
+    }
+
+    .info-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        letter-spacing: .02em;
+        &-title {
+            font-size: 18px;
+            line-height: 22px;
+        }
+        &-volume {
+            margin-top: 16px;
+            font-family: $serif-font;
+            font-size: 56px;
+            font-weight: 500;
+            line-height: 75px;
+        }
+        &-price {
+            margin-top: 16px;
+            font-size: 18px;
+            line-height: 22px;
+        }
+        &-descr {
+            margin-top: 32px;
+            border-top: 2px solid $green;
+            padding: 32px 20px 0;
+            font-size: 16px;
+            line-height: 1.4;
+            margin-bottom: auto;
+        }
+        &-order {
+            margin-top: 32px;
+            width: 100%;
+        }
+    }
+
+
+    .swiper-controls {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .swiper-pagination {
+        width: auto;
+        margin-left: 28px;
+        margin-right: 28px;
+    }
+}
+
 .block-images-text {
     padding-top: 136px;
     .container {
@@ -91,6 +200,9 @@
         img {
             position: relative;
             z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         h3 {
             position: absolute;
@@ -350,30 +462,18 @@
         overflow: hidden;
     }
 
+    .swiper-controls {
+        margin-top: 64px;
+    }
     .swiper-btn {
         position: absolute;
-        width: 24px;
-        height: 24px;
-        margin: 0;
-        z-index: 2;
-        background-image: url("data:image/svg+xml,%3Csvg width='8' height='15' viewBox='0 0 8 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 1.5L1 7.5L7 13.5' stroke='%23E0E0E0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 8px 15px;
         top: calc((100% - 72px) / 2 - 12px);
-        cursor: pointer;
-        transition: $duration;
-
         &-prev {
             left: -114px;
         }
         &-next {
             right: -114px;
-            transform: rotate(-180deg);
         }
-    }
-    .swiper-controls {
-        margin-top: 64px;
     }
     .swiper-pagination {
         display: flex;

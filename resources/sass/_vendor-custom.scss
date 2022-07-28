@@ -1,0 +1,41 @@
+.swiper {
+    &-btn {
+        width: 24px;
+        height: 24px;
+        margin: 0;
+        z-index: 2;
+        background-image: url("data:image/svg+xml,%3Csvg width='8' height='15' viewBox='0 0 8 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 1.5L1 7.5L7 13.5' stroke='%23E0E0E0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 8px 15px;
+        cursor: pointer;
+        transition: $duration;
+
+        // &-prev {
+        // }
+        &-next {
+            transform: rotate(-180deg);
+        }
+    }
+
+    &-pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: static;
+        &-bullet {
+            margin: 0;
+            opacity: .2;
+            transition: $duration;
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            &:not(:last-child) {
+                margin-right: 12px;
+            }
+            &-active {
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -1,4 +1,3 @@
-
 const teamSwiper = new Swiper('.js-team-swiper', {
     slidesPerView: 3,
     loop: true,
@@ -12,7 +11,6 @@ const teamSwiper = new Swiper('.js-team-swiper', {
     mousewheel: {
         forceToAxis: true,
     },
-    // noSwiping: true,
     slideToClickedSlide: true,
     keyboard: {
         enabled: true,
@@ -28,6 +26,52 @@ const teamSwiper = new Swiper('.js-team-swiper', {
         nextEl: '#team-next',
     },
 });
+
+// product slider
+const productBottleSwiper = new Swiper('.js-product-bottle-swiper', {
+    slidesPerView: 'auto',
+    loop: true,
+    draggable: true,
+    spaceBetween: 164,
+    // slideToClickedSlide: true,
+    centeredSlides: true,
+    noSwiping: true,
+    keyboard: {
+        enabled: true,
+        onlyInViewport: true
+    },
+    pagination: {
+        el: '#product-pagination',
+        type: 'bullets',
+        clickable: true,
+    },
+    navigation: {
+        prevEl: '#product-prev',
+        nextEl: '#product-next',
+    },
+});
+
+const productInfoSwiper = new Swiper('.js-product-info-swiper', {
+    slidesPerView: 1,
+    loop: true,
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
+    pagination: {
+        el: '#product-pagination',
+        type: 'bullets',
+        clickable: true,
+    },
+    navigation: {
+        prevEl: '#product-prev',
+        nextEl: '#product-next',
+    },
+});
+productBottleSwiper[0].controller.control = productInfoSwiper;
+productInfoSwiper[1].controller.control = productBottleSwiper;
+// product slider
+
 
 document.querySelector('.burger-btn').addEventListener('click', () => {
     document.querySelector('body').classList.toggle('mobile-menu-open');
