@@ -102,6 +102,12 @@ iframe {
     border: 0;
 }
 
+h1, h2, h3, h4 {
+    font-family: $serif-font;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
 .wrapper {
     position: relative;
     overflow: hidden;
@@ -142,7 +148,13 @@ main {
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    padding: 0 $container-padding-x-desktop;
+    padding: 0 $container-padding-x-fullhd;
+    @include maxw1600 {
+        padding: 0 $container-padding-x-widescreen
+    }
+    @include maxw1440 {
+        padding: 0 $container-padding-x-desktop;
+    }
     @include tablet {
         padding: 0 $container-padding-x-tablet;
     }

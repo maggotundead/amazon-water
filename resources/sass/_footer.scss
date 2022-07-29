@@ -1,6 +1,7 @@
 .block-subscribe-footer {
     min-height: initial;
     flex-direction: column;
+    padding: 0;
     .container {
         &:nth-child(3) {
             max-width: 100%;
@@ -8,16 +9,41 @@
         }
     }
     .subscribe {
-        padding-top: 140px;
-        padding-bottom: 140px;
+        padding-top: 136px;
+        padding-bottom: 136px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        @include maxw1600 {
+            padding-top: 120px;
+            padding-bottom: 120px;
+        }
+        @include responsive {
+            padding-top: 104px;
+            padding-bottom: 104px;
+        }
+        @include tablet {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        @include mobile {
+            padding-top: 64px;
+            padding-bottom: 64px;
+        }
         &-form {
             margin-top: 48px;
             width: 100%;
             display: flex;
             justify-content: center;
+            @include tablet {
+                margin-top: 40px;
+            }
+            @include mobile {
+                margin-top: 32px;
+            }
+            @include maxw480 {
+                flex-direction: column;
+            }
         }
         &-input {
             margin-right: 24px;
@@ -32,10 +58,29 @@
             max-width: 440px;
             display: block;
             height: 50px;
+            @include maxw1600 {
+                font-size: 22px;
+            }
+            @include responsive {
+                font-size: 20px;
+                height: 48px;
+            }
+            @include tablet {
+                font-size: 18px;
+                height: 44px;
+                margin-right: 16px;
+            }
+            @include mobile {
+                font-size: 16px;
+            }
+            @include maxw480 {
+                margin-right: 0;
+                margin-bottom: 16px;
+            }
             &::placeholder {
                 opacity: .83;
-                font-size: 24px;
-                font-size: inherit;
+                // font-size: 24px;
+                // font-size: inherit;
             }
         }
     }
@@ -45,6 +90,18 @@
                 margin-top: 24px;
                 font-size: 24px;
                 max-width: 690px;
+                @include maxw1600 {
+                    font-size: 22px;
+                }
+                @include responsive {
+                    font-size: 20px;
+                }
+                @include tablet {
+                    font-size: 18px;
+                }
+                @include mobile {
+                    font-size: 16px;
+                }
             }
         }
     }
@@ -56,6 +113,14 @@
         max-width: 870px;
         width: 100%;
         margin: 0 auto;
+        @include tablet {
+            grid-template-columns: 1fr 1fr;
+            gap: 48px 16px;
+            text-align: center;
+        }
+        @include maxw480 {
+            grid-template-columns: 1fr;
+        }
     }
     .footer-group {
         &-content {
@@ -65,20 +130,41 @@
             align-items: flex-start;
             font-size: 12px;
             line-height: 14px;
+            @include tablet {
+                align-items: center;
+                text-align: center;
+            }
+            @include maxw480 {
+                margin-top: 24px;
+                font-size: 16px;
+                line-height: 1.2;
+            }
         }
         h4 {
             font-size: 18px;
             line-height: 22px;
             font-weight: 500;
             text-transform: uppercase;
+            @include mobile {
+                font-size: 16px;
+                line-height: 1.2;
+            }
+            @include maxw480 {
+                font-size: 20px;
+                line-height: 1.4;
+            }
         }
         address {
             font-style: normal;
             max-width: 166px;
+
         }
         a {
             &:not(:last-child) {
                 margin-bottom: 12px;
+                @include maxw480 {
+                    margin-bottom: 20px;
+                }
             }
         }
     }
@@ -89,6 +175,9 @@
             &:not(:last-child) {
                 margin-bottom: 0;
                 margin-right: 12px;
+                @include maxw480 {
+                    margin-right: 24px;
+                }
             }
         }
     }

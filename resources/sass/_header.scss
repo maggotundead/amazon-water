@@ -9,11 +9,20 @@
         backdrop-filter: blur(8px);
         .container {
             padding-top: 16px;
+            @include responsive {
+                padding-top: 12px;
+            }
         }
         .menu {
             &-elem {
                 &:not(:last-child) {
                     margin-right: 40px;
+                    @include responsive {
+                        margin-right: 24px;
+                    }
+                    @include tablet {
+                        margin-right: 0;
+                    }
                 }
             }
         }
@@ -29,24 +38,91 @@
         // grid-template-columns: 1fr auto 1fr;
         grid-template-columns: auto 1fr auto;
         transition: $duration;
+        align-items: center;
+        @include responsive {
+            padding-top: 32px;
+            padding-bottom: 12px;
+        }
+        @include tablet {
+            padding-top: 11px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .logo-tablet {
+        display: none;
+        @include tablet {
+            display: block;
+        }
+        img {
+            @include mobile {
+                width: 80px;
+            }
+        }
     }
     .logo {
         padding: 0 16px;
+        @include responsive {
+            padding: 0;
+        }
+        img {
+            @include responsive {
+                width: 100px;
+            }
+
+        }
     }
     .menu {
         grid-column: 2;
         padding-left: 80px;
+        @include tablet {
+            position: fixed;
+            height: 100vh;
+            top: -100vh;
+            left: 0;
+            right: 0;
+            backdrop-filter: blur(100px);
+            pointer-events: none;
+            transition: $duration;
+            opacity: 0;
+            padding: 64px 0;
+        }
         &-list {
             list-style: none;
             display: flex;
             align-items: center;
             justify-content: center;
+            @include tablet {
+                flex-direction: column;
+                height: 100%;
+            }
         }
         &-elem {
             transition: $duration;
             &:not(:last-child) {
                 // margin-right: 64px;
                 margin-right: 56px;
+                @include responsive {
+                    margin-right: 36px;
+                }
+                @include maxw1200 {
+                    margin-right: 24px;
+                }
+                @include tablet {
+                    margin-right: 0;
+                    margin-bottom: 32px;
+                }
+            }
+            &:not(.logo-elem) {
+                @include tablet {
+                    order: 2;
+                }
+            }
+            &.logo-elem {
+                @include tablet {
+                    order: 1;
+                    margin-bottom: 64px;
+                }
             }
         }
 
@@ -59,6 +135,13 @@
             color: $milk;
             white-space: nowrap;
             position: relative;
+            @include responsive {
+                font-size: 12px;
+            }
+            @include tablet {
+                font-size: 18px;
+                line-height: 1.2;
+            }
             &:after {
                 content: '';
                 width: 30px;
@@ -71,6 +154,11 @@
                 transition: $duration;
                 pointer-events: none;
                 background-color: $green;
+                @include tablet {
+                    height: 2px;
+                    width: 64px;
+                    bottom: -6px;
+                }
             }
             &.active,
             &:hover {
@@ -86,6 +174,12 @@
         pointer-events: none;
         transition: $duration;
         margin-left: 32px;
+        @include responsive {
+            margin-left: 16px;
+        }
+        @include tablet {
+            margin-left: 0;
+        }
     }
     .burger-btn {
         display: none;
@@ -94,7 +188,7 @@
         z-index: 2;
         position: relative;
         order: 99;
-        @include mobile {
+        @include tablet {
             display: block;
         }
         span {
@@ -126,8 +220,15 @@
 
 .mobile-menu-open {
     .header {
-        .collapsed {
-            @include mobile {
+        &.sticky {
+            .btn {
+                @include tablet {
+                    display: none;
+                }
+            }
+        }
+        .menu {
+            @include tablet {
                 opacity: 1;
                 pointer-events: auto;
                 top: 0;

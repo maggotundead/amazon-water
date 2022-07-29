@@ -42,16 +42,33 @@ const teamSwiper = new Swiper('.js-team-swiper', {
         prevEl: '#team-prev',
         nextEl: '#team-next',
     },
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+        },
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 48,
+        },
+        860: {
+            slidesPerView: 3,
+            spaceBetween: 64,
+        },
+        1024: {
+            spaceBetween: 75,
+        }
+    }
 });
 
 // product slider
 const productBottleSwiper = new Swiper('.js-product-bottle-swiper', {
-    slidesPerView: 'auto',
+    // slidesPerView: 3,
+    slidesPerView: 1,
     loop: true,
     draggable: true,
-    spaceBetween: 164,
-    // slideToClickedSlide: true,
-    centeredSlides: true,
+    // spaceBetween: 164,
+    slideToClickedSlide: true,
+    // centeredSlides: true,
     noSwiping: true,
     keyboard: {
         enabled: true,
@@ -85,8 +102,8 @@ const productInfoSwiper = new Swiper('.js-product-info-swiper', {
         nextEl: '#product-next',
     },
 });
-// productBottleSwiper.controller.control = productInfoSwiper;
-// productInfoSwiper.controller.control = productBottleSwiper;
+productBottleSwiper.controller.control = productInfoSwiper;
+productInfoSwiper.controller.control = productBottleSwiper;
 // product slider
 
 

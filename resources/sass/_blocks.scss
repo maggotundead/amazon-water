@@ -4,6 +4,23 @@
     position: relative;
     display: flex;
     overflow: hidden;
+    @include maxw1600 {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+    @include responsive {
+        padding-top: 104px;
+        padding-bottom: 104px;
+    }
+    @include tablet {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        min-height: css-mas(768px, 100vh);
+    }
+    @include mobile {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
     .bg {
         position: absolute;
         top: 0;
@@ -37,17 +54,34 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @include tablet {
+            padding-top: 150px;
+            padding-bottom: 64px;
+        }
+        @include maxw480 {
+            padding-top: 64px;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
     }
     .text {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        @include maxw480 {
+            margin-top: 32px;
+            align-items: center;
+            text-align: center;
+        }
     }
     .title-descr {
         max-width: 700px;
     }
     .btn {
         margin-top: 40px;
+        @include mobile {
+            margin-top: 32px;
+        }
     }
     .figure {
         width: 350px;
@@ -56,16 +90,39 @@
         align-items: flex-start;
         justify-content: center;
         flex-shrink: 0;
+        @include tablet {
+            width: 200px;
+        }
+        @include maxw480 {
+            width: auto;
+            margin-left: 0;
+        }
+        img {
+            @include tablet {
+                width: 120px;
+            }
+            @include maxw480 {
+                width: 100px;
+            }
+        }
     }
 }
 
 .block-product-slider {
-    padding-top: 136px;
     padding-bottom: 104px;
+    @include tablet {
+        padding-bottom: 80px;
+    }
+    @include mobile {
+        padding-bottom: 64px;
+    }
     .container {
         display: flex;
         flex-wrap: wrap;
         align-items: flex-start;
+        @include tablet {
+            flex-direction: column;
+        }
     }
     .product-info-slider {
         width: 424px;
@@ -75,9 +132,31 @@
         position: relative;
         z-index: 2;
         overflow: hidden;
+        @include maxw1200 {
+            width: 360px;
+            padding: 48px 24px;
+        }
+        @include tablet {
+            padding: 32px 16px;
+            order: 3;
+            width: 100%;
+            max-width: 640px;
+            margin: 48px auto 0;
+        }
     }
     .product-bottle-slider {
-        width: calc(100% - 424px);
+        margin-left: 32px;
+        // width: calc(100% - 424px);
+        width: 250px;
+        // @include maxw1200 {
+        //     width: calc(100% - 360px);
+        // }
+        @include tablet {
+            order: 1;
+            // width: 100%;
+            width: 280px;
+        }
+
         .swiper-slide {
             width: auto;
             height: auto;
@@ -86,6 +165,7 @@
             position: relative;
             display: flex;
             align-items: flex-end;
+            justify-content: center;
             &::before {
                 content: '';
                 width: 180px;
@@ -113,6 +193,7 @@
                 z-index: 2;
             }
         }
+
     }
 
     .info-item {
@@ -160,6 +241,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @include tablet {
+            margin-top: 48px;
+            order: 2;
+        }
     }
     .swiper-pagination {
         width: auto;
@@ -169,31 +255,84 @@
 }
 
 .block-images-text {
-    padding-top: 136px;
+    padding-bottom: 0;
+
     .container {
         display: flex;
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: center;
         column-gap: 100px;
+        @include maxw1600 {
+            column-gap: 80px;
+        }
+        @include responsive {
+            column-gap: 64px;
+        }
+        @include tablet {
+            column-gap: 48px;
+        }
     }
     .image-link {
         position: relative;
         display: flex;
+        flex-grow: 0;
+
         &:nth-child(1) {
             max-width: 516px;
             width: calc(43% - 50px);
             // margin-left: 40px;
+            @include maxw1600 {
+                width: calc(43% - 40px);
+            }
+            @include responsive {
+                width: calc(43% - 32px);
+            }
+            @include tablet {
+                width: calc(43% - 24px);
+            }
+            @include mobile {
+                width: 100%;
+                max-width: 100%;
+            }
         }
         &:nth-child(3) {
             margin-top: 104px;
             max-width: 650px;
             width: calc(53% - 50px);
+            @include maxw1600 {
+                width: calc(53% - 40px);
+            }
+            @include responsive {
+                width: calc(53% - 32px);
+            }
+            @include tablet {
+                width: calc(53% - 24px);
+            }
+            @include mobile {
+                margin-top: 48px;
+                width: 100%;
+                max-width: 100%;
+            }
         }
         &:nth-child(4) {
             margin-top: 52px;
             max-width: 560px;
             width: calc(47% - 50px);
+            @include maxw1600 {
+                width: calc(47% - 40px);
+            }
+            @include responsive {
+                width: calc(47% - 32px);
+            }
+            @include tablet {
+                width: calc(47% - 24px);
+            }
+            @include mobile {
+                margin-top: 48px;
+                width: 100%;
+                max-width: 100%;
+            }
         }
         &::after {
             content: '';
@@ -226,15 +365,41 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
+            padding: 16px;
+            @include tablet {
+                font-size: 28px;
+            }
         }
     }
     .text {
         max-width: 616px;
         width: calc(57% - 50px);
         align-self: center;
+        flex-grow: 0;
+        @include maxw1600 {
+            width: calc(57% - 40px);
+        }
+        @include responsive {
+            width: calc(57% - 32px);
+        }
+        @include tablet {
+            width: calc(57% - 24px);
+        }
+        @include mobile {
+            margin-top: 24px;
+            width: 100%;
+            max-width: 100%;
+        }
         p {
             &:not(:last-child) {
                 margin-bottom: 24px;
+                @include responsive {
+                    margin-bottom: 20px;
+                }
+                @include mobile {
+                    margin-bottom: 16px;
+                }
             }
         }
     }
@@ -245,20 +410,49 @@
         .container {
             padding-top: 160px;
             padding-bottom: 150px;
+            @include maxw1600 {
+                padding-top: 120px;
+                padding-bottom: 120px;
+            }
+            @include responsive {
+                padding-top: 104px;
+                padding-bottom: 104px;
+            }
+            @include tablet {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+            @include mobile {
+                padding-top: 64px;
+                padding-bottom: 64px;
+            }
         }
         .figure {
             min-height: 495px;
             margin-bottom: -90px;
+            @include mobile {
+                min-height: initial;
+                margin-bottom: -32px;
+            }
+            img {
+                @include mobile {
+                    max-width: 100px;
+                }
+            }
         }
     }
     .container {
-        padding-top: 80px;
-        padding-bottom: 80px;
+        // padding-top: 80px;
+        // padding-bottom: 80px;
         display: flex;
         flex-direction: column;
         align-items: center;
         // height: 100%;
         justify-content: center;
+        // @include mobile {
+        //     padding-top: 64px;
+        //     padding-bottom: 64px;
+        // }
     }
     .figure {
         display: flex;
@@ -266,6 +460,12 @@
         justify-content: center;
         // min-height: 496px;
         margin-bottom: 40px;
+        @include tablet {
+            margin-bottom: 32px;
+        }
+        @include mobile {
+            margin-bottom: 24px;
+        }
     }
     .title {
         max-width: 1030px;
@@ -278,6 +478,19 @@
             + .descr {
                 margin-top: 24px;
                 font-size: 24px;
+                @include maxw1600 {
+                    font-size: 22px;
+                }
+                @include responsive {
+                    font-size: 20px;
+                }
+                @include tablet {
+                    font-size: 18px;
+                }
+                @include mobile {
+                    margin-top: 16px;
+                    font-size: 16px;
+                }
             }
         }
     }
@@ -291,25 +504,40 @@
 
         .form-content {
             grid-template-columns: repeat(3, 1fr);
+            @include mobile {
+                grid-template-columns: 1fr;
+            }
         }
         .wide-group {
             grid-column: span 2;
+            @include mobile {
+                grid-column: 1;
+            }
         }
         .checkbox-group {
             grid-column: span 3;
             flex-direction: row;
             justify-content: center;
+            @include mobile {
+                grid-column: 1;
+            }
         }
 
         .checkbox-wrapper {
             &:not(:last-child) {
                 margin-right: 50px;
+                @include mobile {
+                    margin-right: 32px;
+                }
             }
         }
     }
 
     .btn {
         margin-top: 40px;
+        @include tablet {
+            margin-top: 32px;
+        }
         &.submit {
             margin: 32px auto 0;
             width: 100%;
@@ -320,8 +548,6 @@
 }
 
 .block-our-story {
-    padding-top: 136px;
-    padding-bottom: 136px;
     min-height: 0;
     .inner {
         display: grid;
@@ -331,6 +557,26 @@
         max-width: 1230px;
         margin-left: auto;
         margin-right: auto;
+        @include maxw1600 {
+            column-gap: 64px;
+            gap: 64px;
+        }
+        @include responsive {
+            column-gap: 48px;
+            gap: 48px;
+        }
+        @include maxw1200 {
+            column-gap: 40px;
+            gap: 40px;
+        }
+        @include tablet {
+            column-gap: 32px;
+            gap: 32px;
+        }
+        @include mobile {
+            grid-template-columns: 1fr;
+            gap: 64px;
+        }
     }
     .text {
         display: flex;
@@ -343,13 +589,21 @@
             margin-bottom: 24px;
         }
     }
+    .banner {
+        img {
+            width: 100%;
+        }
+    }
+    .learn-more {
+        margin-top: 32px;
+    }
 }
 
 .block-core-beliefs {
     min-height: 0;
     .container {
-        padding-top: 104px;
-        padding-bottom: 104px;
+        // padding-top: 104px;
+        // padding-bottom: 104px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -360,6 +614,14 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 20px;
+        @include tablet {
+            margin-top: 48px;
+        }
+        @include mobile {
+            margin-top: 32px;
+            grid-template-columns: 1fr;
+            row-gap: 48px;
+        }
     }
     .item {
         display: flex;
@@ -376,12 +638,31 @@
             font-size: 32px;
             line-height: 38px;
             letter-spacing: .02em;
+            @include maxw1600 {
+                font-size: 30px;
+            }
+            @include responsive {
+                line-height: 1.2;
+                font-size: 28px;
+            }
+            @include maxw1200 {
+                font-size: 26px;
+            }
+            @include tablet {
+                font-size: 24px;
+            }
+            @include mobile {
+                margin-top: 16px;
+            }
         }
         &-descr {
             margin-top: 16px;
             font-size: 18px;
             line-height: 1.3;
             letter-spacing: .02em;
+            @include mobile {
+                font-size: 16px;
+            }
         }
     }
 }
@@ -399,8 +680,8 @@
         }
     }
     .container {
-        padding-top: 104px;
-        padding-bottom: 104px;
+        // padding-top: 104px;
+        // padding-bottom: 104px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -412,6 +693,12 @@
         margin: 80px auto 0;
         width: 100%;
         position: relative;
+        @include tablet {
+            margin-top: 64px;
+        }
+        @include mobile {
+            margin-top: 48px;
+        }
     }
 
 
@@ -468,19 +755,40 @@
     .swiper-container {
         margin: 0 114px;
         overflow: hidden;
+        @include maxw1600 {
+            margin: 0 80px;
+        }
+        @include responsive {
+            margin: 0 64px;
+        }
+        @include maxw1200 {
+            margin: 0 48px;
+        }
+        @include tablet {
+            margin: 0 32px;
+        }
     }
 
     .swiper-controls {
         margin-top: 64px;
+        @include tablet {
+            margin-top: 48px;
+        }
     }
     .swiper-btn {
         position: absolute;
         top: calc((100% - 72px) / 2 - 12px);
         &-prev {
             left: -114px;
+            @include maxw1600 {
+                left: 0;
+            }
         }
         &-next {
             right: -114px;
+            @include maxw1600 {
+                right: 0;
+            }
         }
     }
     .swiper-pagination {
@@ -506,8 +814,6 @@
 }
 
 .block-sustainable-future {
-    padding-top: 136px;
-    padding-bottom: 136px;
     .text-group {
         margin-top: 80px;
         display: flex;
@@ -515,33 +821,94 @@
         justify-content: center;
         column-gap: 80px;
         gap: 80px;
+        @include maxw1600 {
+            column-gap: 64px;
+            gap: 64px;
+            margin-top: 72px;
+        }
+        @include responsive {
+            column-gap: 48px;
+            gap: 48px;
+            margin-top: 64px;
+        }
+        @include maxw1200 {
+            column-gap: 40px;
+            gap: 40px;
+            margin-top: 56px;
+        }
+        @include tablet {
+            column-gap: 32px;
+            gap: 32px;
+            margin-top: 48px;
+        }
+        @include mobile {
+            flex-direction: column;
+        }
         &:nth-child(2n+1) {
             flex-direction: row-reverse;
             text-align: right;
+            @include mobile {
+                flex-direction: column;
+            }
         }
     }
-    .banner {
-        margin-right: 80px;
+    .image {
+        flex-shrink: 1;
+        @include tablet {
+            max-width: 50%;
+        }
+        @include mobile {
+            max-width: 100%;
+        }
+        img {
+            width: 100%;
+        }
     }
     .text {
         max-width: 560px;
         letter-spacing: .02em;
+        @include tablet {
+            flex-shrink: 1;
+            max-width: 50%;
+        }
+        @include mobile {
+            max-width: 100%;
+        }
         .title {
             font-size: 32px;
             line-height: 38px;
             font-weight: 400;
+            @include maxw1600 {
+                line-height: 1.2;
+                font-size: 30px;
+            }
+            @include responsive {
+                font-size: 28px;
+            }
+            @include maxw1200 {
+                font-size: 26px;
+            }
+            @include tablet {
+                font-size: 24px;
+            }
+
         }
         .descr {
             margin-top: 16px;
             font-size: 18px;
             line-height: 1.3;
+            @include mobile {
+                margin-top: 24px;
+                font-size: 16px;
+                line-height: 1.4;
+            }
         }
     }
 }
 
 .block-question-form {
-    padding-top: 104px;
-    padding-bottom: 104px;
+    // padding-top: 104px;
+    // padding-bottom: 104px;
     min-height: 0;
     .bg {
         &::after {
@@ -561,15 +928,27 @@
 
         .form-content {
             grid-template-columns: 1fr 1fr;
+            @include mobile {
+                grid-template-columns: 1fr;
+            }
         }
 
         .checkbox-group {
             padding-top: 36px;
+            @include mobile {
+                padding-top: 0;
+                flex-direction: row;
+                justify-content: center;
+            }
         }
 
         .checkbox-wrapper {
             &:not(:last-child) {
                 margin-bottom: 6px;
+                @include mobile {
+                    margin-bottom: 0;
+                    margin-right: 32px;
+                }
             }
         }
     }
@@ -600,6 +979,10 @@
         width: 100%;
         max-width: 1100px;
         display: flex;
+        @include mobile {
+            margin: 64px auto 0;
+            flex-direction: column;
+        }
     }
     .tab-selectors {
         display: flex;
@@ -608,6 +991,11 @@
         width: 335px;
         flex-shrink: 0;
         padding-right: 20px;
+        @include mobile {
+            width: 100%;
+            padding-right: 0;
+            align-items: center;
+        }
     }
     .tab-selector {
         font-size: 20px;
@@ -617,6 +1005,10 @@
         padding-bottom: 8px;
         border-bottom: 2px solid transparent;
         transition: $duration;
+        @include mobile {
+            font-size: 18px;
+            padding-bottom: 4px;
+        }
         &:hover {
             border-color: rgba($green, .5);
         }
@@ -625,9 +1017,16 @@
         }
         &:not(:last-child) {
             margin-bottom: 40px;
+            @include mobile {
+                margin-bottom: 24px
+            }
         }
     }
-
+    .tabs {
+        @include mobile {
+            margin-top: 48px;
+        }
+    }
     .tab {
         display: none;
         &.active {
@@ -683,6 +1082,10 @@
             font-weight: 300;
             line-height: 1.4;
             letter-spacing: 0.02em;
+            @include mobile {
+                font-size: 16px;
+                line-height: 1.6;
+            }
             &:not(:last-child) {
                 margin-bottom: 20px;
             }
@@ -691,6 +1094,9 @@
         a {
             border-bottom: 1px solid currentColor;
             transition: $duration;
+            @include mobile {
+                border-color: $green;
+            }
             &:hover {
                 border-color: $green;
             }
@@ -728,6 +1134,26 @@
         align-items: center;
         justify-content: space-between;
         position: relative;
+        @include maxw1600 {
+            padding-top: 160px;
+        }
+        @include responsive {
+            padding-top: 136px;
+        }
+        @include tablet {
+            padding-top: 80px;
+            padding-bottom: 80px;;
+        }
+        @include mobile {
+            flex-direction: column-reverse;
+            align-items: center;
+            text-align: center;
+        }
+    }
+    .text {
+        @include mobile {
+            margin-top: 40px;
+        }
     }
     .name {
         margin-top: 80px;
@@ -737,6 +1163,16 @@
         letter-spacing: 0.02em;
         position: relative;
         padding-bottom: 16px;
+        @include tablet {
+            margin-top: 64px;
+        }
+        @include mobile {
+            margin-top: 48px;
+        }
+        @include maxw480 {
+            margin-top: 32px;
+            font-size: 24px;
+        }
         &::after {
             content: '';
             position: absolute;
@@ -745,6 +1181,10 @@
             width: 60px;
             height: 1px;
             background-color: $green;
+            @include mobile {
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
     }
     .story {
@@ -753,6 +1193,9 @@
         font-size: 18px;
         line-height: 1.4;
         letter-spacing: .02em;
+        @include mobile {
+            font-size: 16px;
+        }
     }
     .figure {
         max-width: 530px;
@@ -765,16 +1208,71 @@
         overflow: hidden;
         border-radius: 50%;
         position: relative;
+        @include mobile {
+            width: 100%;
+            padding-bottom: 0;
+            max-width: 480px;
+            margin-left: 0;
+        }
         img {
             width: 100%;
             height: 100%;
             position: absolute;
             top: 0;
             left: 0;
+            @include mobile {
+                position: relative;
+            }
         }
     }
     .bottom-arrow {
         left: 0;
         transform: initial;
+        @include mobile {
+            left: 50%;
+        }
+    }
+}
+
+.block-text {
+    padding-top: 150px;
+    @include tablet {
+        padding-top: 104px;
+    }
+
+    h1 {
+        margin-bottom: 48px;
+        @include tablet {
+            margin-bottom: 40px;
+        }
+        @include mobile {
+            margin-bottom: 32px;
+        }
+    }
+    h2 {
+        font-weight: 500;
+        text-transform: uppercase;
+        &:not(:first-child) {
+            margin-top: 32px;
+            @include mobile {
+                margin-top: 24px;
+            }
+        }
+        &:not(:last-child) {
+            margin-bottom: 32px;
+            @include mobile {
+                margin-bottom: 24px;
+            }
+        }
+    }
+    p {
+        font-size: 16px;
+        line-height: 1.4;
+        @include mobile {
+            line-height: 1.71;
+        }
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
     }
 }
