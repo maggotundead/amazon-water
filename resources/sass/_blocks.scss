@@ -4,6 +4,8 @@
     position: relative;
     display: flex;
     overflow: hidden;
+    padding-top: 136px;
+    padding-bottom: 136px;
     @include maxw1600 {
         padding-top: 120px;
         padding-bottom: 120px;
@@ -109,17 +111,18 @@
 }
 
 .block-product-slider {
-    padding-bottom: 104px;
-    @include tablet {
-        padding-bottom: 80px;
-    }
-    @include mobile {
-        padding-bottom: 64px;
-    }
+    // padding-bottom: 104px;
+    // @include tablet {
+    //     padding-bottom: 80px;
+    // }
+    // @include mobile {
+    //     padding-bottom: 64px;
+    // }
     .container {
         display: flex;
         flex-wrap: wrap;
-        align-items: flex-start;
+        // align-items: flex-start;
+        align-items: flex-end;
         @include tablet {
             flex-direction: column;
         }
@@ -145,16 +148,24 @@
         }
     }
     .product-bottle-slider {
-        margin-left: 32px;
+        margin-left: 64px;
         // width: calc(100% - 424px);
-        width: 250px;
+        width: 360px;
         // @include maxw1200 {
         //     width: calc(100% - 360px);
         // }
+        @include maxw1600 {
+            width: 320px;
+            margin-left: 48px;
+        }
+        @include responsive {
+            margin-left: 32px;
+        }
         @include tablet {
             order: 1;
             // width: 100%;
             width: 280px;
+            margin-left: 64px;
         }
 
         .swiper-slide {
@@ -236,14 +247,15 @@
 
 
     .swiper-controls {
-        margin-top: 20px;
+        // margin-top: 20px;
+        margin-top: 48px;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
 
         @include tablet {
-            margin-top: 48px;
+            // margin-top: 48px;
             order: 2;
         }
     }
