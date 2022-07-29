@@ -4318,6 +4318,10 @@ main {
       width: 100%;
       max-width: 640px;
       margin: 48px auto 0; } }
+  @media screen and (max-width: 767px) {
+    .block-product-slider .product-info-slider {
+      max-width: 100%;
+      margin-top: 32px; } }
 
 .block-product-slider .product-bottle-slider {
   margin-left: 64px;
@@ -4334,6 +4338,10 @@ main {
       order: 1;
       width: 280px;
       margin-left: 64px; } }
+  @media screen and (max-width: 767px) {
+    .block-product-slider .product-bottle-slider {
+      width: 100%;
+      margin-left: 0; } }
   .block-product-slider .product-bottle-slider .swiper-slide {
     width: auto;
     height: auto;
@@ -4405,6 +4413,9 @@ main {
   @media screen and (max-width: 1023px) {
     .block-product-slider .swiper-controls {
       order: 2; } }
+  @media screen and (max-width: 767px) {
+    .block-product-slider .swiper-controls {
+      margin-top: 32px; } }
 
 .block-product-slider .swiper-pagination {
   width: auto;

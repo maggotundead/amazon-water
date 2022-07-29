@@ -146,6 +146,10 @@
             max-width: 640px;
             margin: 48px auto 0;
         }
+        @include mobile {
+            max-width: 100%;
+            margin-top: 32px;
+        }
     }
     .product-bottle-slider {
         margin-left: 64px;
@@ -166,6 +170,10 @@
             // width: 100%;
             width: 280px;
             margin-left: 64px;
+        }
+        @include mobile {
+            width: 100%;
+            margin-left: 0;
         }
 
         .swiper-slide {
@@ -257,6 +265,9 @@
         @include tablet {
             // margin-top: 48px;
             order: 2;
+        }
+        @include mobile {
+            margin-top: 32px;
         }
     }
     .swiper-pagination {
