@@ -80,8 +80,8 @@ const productBottleSwiper = new Swiper('.js-product-bottle-swiper', {
         clickable: true,
     },
     navigation: {
-        prevEl: '#product-prev',
-        nextEl: '#product-next',
+        prevEl: '#product-next',
+        nextEl: '#product-prev',
     },
 });
 
@@ -98,8 +98,8 @@ const productInfoSwiper = new Swiper('.js-product-info-swiper', {
         clickable: true,
     },
     navigation: {
-        prevEl: '#product-prev',
-        nextEl: '#product-next',
+        prevEl: '#product-next',
+        nextEl: '#product-prev',
     },
 });
 productBottleSwiper.controller.control = productInfoSwiper;
