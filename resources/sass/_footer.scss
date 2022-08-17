@@ -1,6 +1,7 @@
 .block-subscribe-footer {
-    min-height: initial;
+    // min-height: initial;
     flex-direction: column;
+    justify-content: center;
     padding: 0;
     .container {
         &:nth-child(3) {

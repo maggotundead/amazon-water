@@ -1172,21 +1172,22 @@
 
 .block-ambassador {
     .inner {
-        padding-top: 180px;
+        // padding-top: 180px;
+        padding-top: 80px;
         padding-bottom: 90px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
-        @include maxw1600 {
-            padding-top: 160px;
-        }
-        @include responsive {
-            padding-top: 136px;
-        }
+        // @include maxw1600 {
+        //     padding-top: 160px;
+        // }
+        // @include responsive {
+        //     padding-top: 136px;
+        // }
         @include tablet {
-            padding-top: 80px;
-            padding-bottom: 80px;;
+            // padding-top: 80px;
+            padding-bottom: 80px;
         }
         @include mobile {
             flex-direction: column-reverse;
@@ -1200,19 +1201,20 @@
         }
     }
     .name {
-        margin-top: 80px;
+        // margin-top: 80px;
+        margin-top: 48px;
         font-size: 32px;
         font-weight: 500;
         line-height: 38px;
         letter-spacing: 0.02em;
         position: relative;
         padding-bottom: 16px;
-        @include tablet {
-            margin-top: 64px;
-        }
-        @include mobile {
-            margin-top: 48px;
-        }
+        // @include tablet {
+        //     margin-top: 64px;
+        // }
+        // @include mobile {
+        //     margin-top: 48px;
+        // }
         @include maxw480 {
             margin-top: 32px;
             font-size: 24px;

@@ -66,6 +66,12 @@
             }
         }
     }
+
+    br {
+        @include maxw480 {
+            display: none;
+        }
+    }
 }
 
 .btn {
