@@ -190,3 +190,14 @@ let wow = new WOW({
     scrollContainer: null
 });
 wow.init();
+
+const images = document.querySelectorAll('.bg img');
+new simpleParallax(images,
+{
+    delay: 0,
+    orientation: 'down',
+    scale: 1.8,
+    overflow: true,
+    // customContainer: '.container',
+    // customWrapper: '.wrapper'
+});
