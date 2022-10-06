@@ -23,7 +23,9 @@
         padding-top: 64px;
         padding-bottom: 64px;
     }
-    .bg {
+    .bg,
+    .sky,
+    .landscape {
         position: absolute;
         top: 0;
         left: 0;
@@ -38,6 +40,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
         // video {
         //     width: 100%;
@@ -195,10 +202,12 @@
                 background-color: #fff;
                 // filter: blur(52px);
                 filter: blur(24px);
+                will-change: filter;
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
-                bottom: -18px;
+                // bottom: -18px;
+                top: calc(100% + 18px);
                 z-index: 1;
                 transition: $duration;
                 opacity: 0;
@@ -287,21 +296,21 @@
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: center;
-        column-gap: 100px;
-        row-gap: 0;
-        gap: 0 100px;
-        @include maxw1600 {
-            column-gap: 80px;
-            gap: 0 80px;
-        }
-        @include responsive {
-            column-gap: 64px;
-            gap: 0 64px;
-        }
-        @include tablet {
-            column-gap: 48px;
-            gap: 0 48px;
-        }
+        // column-gap: 100px;
+        // row-gap: 0;
+        // gap: 0 100px;
+        // @include maxw1600 {
+        //     column-gap: 80px;
+        //     gap: 0 80px;
+        // }
+        // @include responsive {
+        //     column-gap: 64px;
+        //     gap: 0 64px;
+        // }
+        // @include tablet {
+        //     column-gap: 48px;
+        //     gap: 0 48px;
+        // }
     }
     .image-link {
         position: relative;
@@ -312,18 +321,23 @@
             max-width: 516px;
             width: calc(43% - 50px);
             // margin-left: 40px;
+            margin-right: 100px;
             @include maxw1600 {
                 width: calc(43% - 40px);
+                margin-right: 80px;
             }
             @include responsive {
                 width: calc(43% - 32px);
+                margin-right: 64px;
             }
             @include tablet {
                 width: calc(43% - 24px);
+                margin-right: 48px;
             }
             @include mobile {
                 width: 100%;
                 max-width: 100%;
+                margin-right: 0;
             }
         }
         &:nth-child(3) {
@@ -473,10 +487,12 @@
         }
         .figure {
             min-height: 495px;
-            margin-bottom: -90px;
+            // margin-bottom: -90px;
+            margin-bottom: -32px;
             @include mobile {
                 min-height: initial;
-                margin-bottom: -32px;
+                // margin-bottom: -32px;
+                margin-bottom: 32px;
             }
             img {
                 @include mobile {

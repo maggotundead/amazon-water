@@ -63,8 +63,8 @@ const productBottleSwiper = new Swiper('.js-product-bottle-swiper', {
         clickable: true,
     },
     navigation: {
-        prevEl: '#product-next',
-        nextEl: '#product-prev',
+        prevEl: '#product-prev',
+        nextEl: '#product-next',
     },
 });
 
@@ -81,12 +81,12 @@ const productInfoSwiper = new Swiper('.js-product-info-swiper', {
         clickable: true,
     },
     navigation: {
-        prevEl: '#product-next',
-        nextEl: '#product-prev',
+        prevEl: '#product-prev',
+        nextEl: '#product-next',
     },
 });
-productBottleSwiper.controller.control = productInfoSwiper;
-productInfoSwiper.controller.control = productBottleSwiper;
+productBottleSwiper.controller.control = this.productInfoSwiper;
+productInfoSwiper.controller.control = this.productBottleSwiper;
 // product slider
 
 
@@ -196,8 +196,24 @@ new simpleParallax(images,
 {
     delay: 0,
     orientation: 'down',
-    scale: 1.8,
+    scale: 1.3,
     overflow: true,
+	transition: 'cubic-bezier(0,0,0,1)'
     // customContainer: '.container',
     // customWrapper: '.wrapper'
+});
+
+window.addEventListener("scroll", function(event) {
+var topDistance = this.pageYOffset;
+var layers = document.querySelectorAll("[data-type='parallax']");
+    for (var i = 0; i < layers.length; i++) {
+        var layer = layers[i];
+    var depth = layer.getAttribute("data-depth");
+    var translate3d = 'translate3d(0, ' + -(topDistance * depth) + 'px, 0)';
+    layer.style['-webkit-transform'] = translate3d;
+    // layer.style['-moz-transform'] = translate3d;
+    // layer.style['-ms-transform'] = translate3d;
+    // layer.style['-o-transform'] = translate3d;
+    layer.style.transform = translate3d;
+    }
 });
