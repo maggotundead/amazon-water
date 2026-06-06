@@ -1,14 +1,14 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 
-// import strip from "@rollup/plugin-strip";
-
 export default defineConfig({
   root: "./src",
   base: "./",
 
+  publicDir: "public",
+
   server: {
-    open: "./src/index.html",
+    open: "/index.html",
     host: true,
   },
 
@@ -23,61 +23,45 @@ export default defineConfig({
 
   build: {
     outDir: "../dist",
-    assetsDir: "./",
-    assetsInlineLimit: 4096,
     emptyOutDir: true,
     target: "es2015",
-
-    // css: {
-    //   preprocessorOptions: {
-    //     scss: {
-    //       additionalData: `
-    //         @import "./src/styles/variables";
-    //         @import "./src/styles/mixins";
-    //         @import "./src/styles/general";
-    //         @import "./src/styles/header";
-    //         @import "./src/styles/blocks";
-    //         @import "./src/styles/footer";
-    //         @import "./src/styles/modal";
-    //       `
-    //     }
-    //   }
-    // },
+    assetsInlineLimit: 0, // disable base64 inline
 
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "./src/index.html"),
+        main: resolve(__dirname, "src/index.html"),
+        about: resolve(__dirname, "src/about.html"),
+        ambassador: resolve(__dirname, "src/ambassador.html"),
+        home: resolve(__dirname, "src/home.html"),
+        invest: resolve(__dirname, "src/invest.html"),
+        spiring: resolve(__dirname, "src/spiring.html"),
+        support: resolve(__dirname, "src/support.html"),
+        sustainability: resolve(__dirname, "src/sustainability.html"),
+        text: resolve(__dirname, "src/text.html"),
       },
+
       output: {
-        manualChunks: undefined,
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split(".");
+          const extType = info[info.length - 1];
 
-        /* https://stackoverflow.com/questions/71180561/vite-change-ouput-directory-of-assets
-        *****************************************************************************************/
-
-        // assetFileNames: (assetInfo) => {
-        //   let extType = assetInfo.name.split('.').at(1);
-        //   if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
-        //     extType = 'img';
-        //   }
-        //   return `assets/${extType}/[name]-[hash][extname]`;
-        // },
-
-        assetFileNames: ({ name }) => {
-          if (/\.(gif|jpe?g|png|svg)$/.test(name ?? "")) {
-            return `[name][extname]`;
+          if (/\.(css)$/i.test(assetInfo.name)) {
+            return `css/[name][extname]`;
           }
-
-          // if (/\.css$/.test(name ?? "")) {
-          //   //return "assets/css/[name]-[hash][extname]";
-          //   return `css/[name]-[hash][extname]`;
-          // }
-
-          // // default value
-          // // ref: https://rollupjs.org/guide/en/#outputassetfilenames
-          return "[name]-[hash][extname]";
+          if (/\.(png|jpe?g|gif|svg|webp|ico)$/i.test(assetInfo.name)) {
+            return `img/[name][extname]`;
+          }
+          if (/\.(mp4|webm|ogg|avi)$/i.test(assetInfo.name)) {
+            return `video/[name][extname]`;
+          }
+          if (/\.(woff2?|eot|ttf|otf)$/i.test(assetInfo.name)) {
+            return `fonts/[name][extname]`;
+          }
+          return `[name][extname]`;
         },
+        chunkFileNames: "js/[name].js",
+        entryFileNames: "js/[name].js",
       },
-    //   plugins: [strip()],
     },
   },
 });
