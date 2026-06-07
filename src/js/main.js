@@ -208,10 +208,15 @@ if (blockAdvisors) {
 		modules: swiperModules,
 		// slidesPerView: 2,
 		slidesPerView: 'auto',
-		// spaceBetween: 30,
-		loop: true,
+		spaceBetween: 30,
+		// loop: true,
 		draggable: true,
 		freeMode: true,
+		observer: true,
+		observeParents: true,
+		resizeObserver: true,
+		draggable: true,
+
 		mousewheel: {
 			forceToAxis: true,
 		},
