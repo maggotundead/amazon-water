@@ -1363,6 +1363,12 @@ body:has(.block-invest-hero) {
 	padding-top: 180px;
 	padding-bottom: 100px;
 
+	@include mobile {
+		padding-top: 146px;
+		padding-bottom: 40px;
+		min-height: initial;
+	}
+
 	&:after {
 		content: '';
 		position: absolute;
@@ -1374,27 +1380,48 @@ body:has(.block-invest-hero) {
 		z-index: 2;
 
 		@include mobile {
-			width: 200%;
-			left: -100%;
+			width: 100%;
+			background: linear-gradient(0deg, rgba(3, 27, 27, 0.45) 3.22%, rgba(3, 27, 27, 0.75) 20.34%, rgba(3, 27, 27, 0.8) 42.96%, rgba(3, 27, 27, 0.85) 58.83%, rgba(3, 27, 27, 0.9) 70.67%, rgba(3, 27, 27, 0.925) 75.31%, rgba(3, 27, 27, 0.9375) 77.63%, rgba(3, 27, 27, 0.94375) 78.79%, rgba(3, 27, 27, 0.95) 79.95%, #031B1B 90.18%);
 		}
 	}
 
 	.bg {
 		img {
 			@include mobile {
-				object-position: 80% center;
+				// object-position: 80% center;
+				object-position: 40% center;
 			}
 		}
 	}
 
 	.title {
 		line-height: 1.2;
+
+		@include mobile {
+			text-align: center;
+		}
+
+		&.page-title {
+			+ .descr {
+				@include mobile {
+					margin-top: 16px;
+					font-size: 16px;
+					line-height: 1.5;
+					text-align: center;
+				}
+			}
+		}
+
 	}
 
 	.text {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+
+		@include mobile {
+			align-items: center;
+		}
 	}
 
 	.features {
@@ -1402,6 +1429,11 @@ body:has(.block-invest-hero) {
 		list-style: none;
 		display: grid;
 		row-gap: 22px;
+
+		@include mobile {
+			margin-top: 36px;
+			row-gap: 16px;
+		}
 
 		li {
 			display: grid;
@@ -1411,6 +1443,20 @@ body:has(.block-invest-hero) {
 			font-size: 18px;
 			line-height: 1.2;
 			max-width: 480px;
+
+			@include mobile {
+				grid-template-columns: 36px 1fr;
+				gap: 10px;
+				font-size: 16px;
+				line-height: 1.5;
+				max-width: 306px;
+			}
+		}
+
+		br {
+			@include mobile {
+				display: none;
+			}
 		}
 	}
 
@@ -1423,6 +1469,12 @@ body:has(.block-invest-hero) {
 
 	.btn {
 		margin-top: 45px;
+
+		@include mobile {
+			margin-top: 36px;
+			padding: 0 10px;
+			height: 50px;
+		}
 	}
 }
 
@@ -1441,6 +1493,7 @@ body:has(.block-invest-hero) {
 		}
 		@include mobile {
 			grid-template-columns: 1fr;
+			gap: 44px;
 		}
 	}
 
@@ -1449,6 +1502,10 @@ body:has(.block-invest-hero) {
 		align-items: flex-start;
 		gap: 16px;
 		position: relative;
+
+		@include mobile {
+			gap: 20px;
+		}
 
 		&:not(:last-child) {
 			&::after {
@@ -1465,10 +1522,10 @@ body:has(.block-invest-hero) {
 
 				@include mobile {
 					content: '';
-					left: 4px;
 					top: initial;
-					bottom: -20px;
-					right: 4px;
+					left: 12px;
+					right: 12px;
+					bottom: -22px;
 					width: auto;
 					height: 1px;
 					transform: initial;
@@ -1482,6 +1539,10 @@ body:has(.block-invest-hero) {
 				@include tablet {
 					font-size: 32px;
 				}
+
+				@include mobile {
+					font-size: 24px;
+				}
 			}
 		}
 		&:nth-child(2n+1) {
@@ -1494,6 +1555,11 @@ body:has(.block-invest-hero) {
 					transform: initial;
 					height: auto;
 				}
+			}
+		}
+		&:nth-child(-n+2) {
+			@include mobile {
+				align-items: center;
 			}
 		}
 		&:nth-child(n+3) {
@@ -1526,6 +1592,18 @@ body:has(.block-invest-hero) {
 			align-items: center;
 			justify-content: center;
 			flex-shrink: 0;
+
+			@include mobile {
+				width: 40px;
+				height: 40px;
+			}
+
+			svg {
+				@include mobile {
+					width: 20px;
+					height: 20px;
+				}
+			}
 		}
 
 		&-value {
@@ -1534,16 +1612,24 @@ body:has(.block-invest-hero) {
 			line-height: 1.38;
 
 			@include tablet {
-				font-size: 32px;
+				font-size: 24px;
 			}
 		}
 		&-descr {
 			font-size: 18px;
 			line-height: 1.667;
 
+			@include mobile {
+				margin-top: 2px;
+				font-size: 16px;
+				line-height: 1.5;
+			}
+
 			br {
-				@include mobile {
-					display: none;
+				&:not(.mobile-only) {
+					@include mobile {
+						display: none;
+					}
 				}
 			}
 		}
@@ -1552,6 +1638,10 @@ body:has(.block-invest-hero) {
 
 .block-company-overview {
 	min-height: initial;
+
+	@include mobile {
+		padding-bottom: 0;
+	}
 
 	.container {
 		display: grid;
@@ -1568,12 +1658,18 @@ body:has(.block-invest-hero) {
 		line-height: 1.667;
 	}
 
+	.title {
+		@include mobile {
+			text-align: center;
+		}
+	}
+
 	.descr {
 		margin-top: 60px;
 		line-height: inherit;
 
 		@include mobile {
-			margin-top: 40px;
+			margin-top: 36px;
 		}
 	}
 
@@ -1583,11 +1679,17 @@ body:has(.block-invest-hero) {
 		padding-left: 20px;
 		max-width: 520px;
 
+		@include mobile {
+			margin-top: 40px;
+			padding-left: 16px;
+			max-width: 300px;
+		}
+
 		&::before {
 			content: '';
-			top: 4px;
-			bottom: 4px;
-			border-right: 1px solid $green;
+			top: 10px;
+			bottom: 10px;
+			border-right: 2px solid $green;
 			position: absolute;
 			left: 0;
 		}
@@ -1597,11 +1699,19 @@ body:has(.block-invest-hero) {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 16px;
+
+		@include mobile {
+			gap: 8px;
+		}
 	}
 
 	img {
 		border-radius: 5px;
 		width: 100%;
+
+		@include mobile {
+			border-radius: 3px;
+		}
 	}
 }
 
@@ -1617,12 +1727,19 @@ body:has(.block-invest-hero) {
 		max-width: 970px;
 
 		@include mobile {
-			margin-top: 40px;
+			margin-top: 36px;
+			padding: 0 16px;
 		}
 	}
 
 	.btn {
 		margin-top: 45px;
+
+		@include mobile {
+			margin-top: 36px;
+			height: 50px;
+			min-width: 240px;
+		}
 	}
 
 	.cards {
@@ -1639,10 +1756,14 @@ body:has(.block-invest-hero) {
 			max-width: 480px;
 			margin-left: auto;
 			margin-right: auto;
+			gap: 55px;
 		}
 	}
 
 	.card-item {
+		@include mobile {
+			padding: 0 12px;
+		}
 		&-photo {
 			width: 100%;
 			img {
@@ -1658,11 +1779,29 @@ body:has(.block-invest-hero) {
 			font-weight: 600;
 			line-height: 1.25;
 			color: $green;
+
+			@include mobile {
+				margin-top: 10px;
+				font-size: 18px;
+				line-height: 1.667;
+			}
 		}
 		&-descr {
 			margin-top: 16px;
 			font-size: 18px;
 			line-height: 1.667;
+
+			@include mobile {
+				margin-top: 6px;
+				font-size: 16px;
+				line-height: 1.5;
+			}
+
+			br {
+				@include mobile {
+					display: none;
+				}
+			}
 		}
 	}
 }
@@ -1681,8 +1820,8 @@ body:has(.block-invest-hero) {
 		z-index: 2;
 
 		@include mobile {
-			left: -100vw;
-			right: -100vw;
+			right: -50px;
+			background: linear-gradient(269.79deg, rgba(7, 19, 18, 0.45) 3.17%, rgba(7, 19, 18, 0.5) 9.9%, rgba(7, 19, 18, 0.55) 15.8%, rgba(7, 19, 18, 0.6) 23.53%, rgba(7, 19, 18, 0.65) 32.79%, rgba(7, 19, 18, 0.7) 42.95%, rgba(7, 19, 18, 0.75) 52.13%, rgba(7, 19, 18, 0.85) 63.49%, rgba(7, 19, 18, 0.9) 77.03%, rgba(7, 19, 18, 0.95) 88.15%, #072726 99.37%);
 		}
 	}
 
@@ -1696,13 +1835,19 @@ body:has(.block-invest-hero) {
 		width: 100%;
 	}
 
+	.title {
+		@include mobile {
+			text-align: center;
+		}
+	}
 	.descr {
 		margin-top: 90px;
 		max-width: 640px;
 		position: relative;
 
 		@include mobile {
-			margin-top: 64px;
+			margin-top: 70px;
+			text-align: center;
 		}
 
 		&::before {
@@ -1714,8 +1859,9 @@ body:has(.block-invest-hero) {
 			width: 250px;
 
 			@include mobile {
-				width: 100px;
-				top: -32px;
+				width: 170px;
+				top: -35px;
+				left: calc(50% - 85px);
 			}
 		}
 	}
@@ -1723,11 +1869,19 @@ body:has(.block-invest-hero) {
 	.sale-areas {
 		margin-top: 40px;
 
+		@include mobile {
+			margin-top: 36px;
+		}
+
 		&-title {
 			font-size: 18px;
 			font-weight: 600;
 			line-height: 1.25;
 			color: $green;
+
+			@include mobile {
+				text-align: center;
+			}
 		}
 
 		&-list {
@@ -1736,8 +1890,9 @@ body:has(.block-invest-hero) {
 			gap: 70px;
 
 			@include mobile {
-				gap: 48px;
+				gap: 30px;
 				flex-direction: column;
+				align-items: center;
 			}
 
 		}
@@ -1749,40 +1904,54 @@ body:has(.block-invest-hero) {
 		display: flex;
 		position: relative;
 
-		@include mobile {
-			max-width: 100%;
-		}
+		// @include mobile {
+		// 	max-width: initial;
+		// 	width: initial;
+		// }
 
-		&:not(:last-child) {
-			&::after {
-				content: '';
-				border-style: solid;
-				border-color: rgba(#fff, .5);
-				border-width: 0 1px 0 0;
-				top: 0;
-				bottom: 0;
-				right: -35px;
-				position: absolute;
+		// &:not(:last-child) {
+		// 	&::after {
+		// 		content: '';
+		// 		border-style: solid;
+		// 		border-color: rgba(#fff, .5);
+		// 		border-width: 0 1px 0 0;
+		// 		top: 0;
+		// 		bottom: 0;
+		// 		right: -35px;
+		// 		position: absolute;
 
-				@include mobile {
-					border-width: 1px 0 0 0;
-					top: initial;
-					left: 0;
-					right: 0;
-					bottom: -24px;
-				}
-			}
-		}
+		// 		@include mobile {
+		// 			border-width: 1px 0 0 0;
+		// 			top: initial;
+		// 			left: 0;
+		// 			right: 0;
+		// 			bottom: -24px;
+		// 		}
+		// 	}
+		// }
 
 		&-icon {
 			display: flex;
 			flex-shrink: 0;
 			margin-right: 20px;
+
+			@include mobile {
+				max-width: 54px;
+				width: 100%;
+				justify-content: center;
+			}
 		}
 
 		&-info {
 			font-size: 18px;
 			line-height: 1.25;
+
+			@include mobile {
+				width: 100%;
+				max-width: 190px;
+				font-size: 16px;
+				line-height: 1.5;
+			}
 		}
 
 		&-title {
@@ -1791,6 +1960,10 @@ body:has(.block-invest-hero) {
 
 		&-descr {
 			margin-top: 10px;
+
+			@include mobile {
+				margin-top: 4px;
+			}
 		}
 	}
 }
@@ -1822,7 +1995,7 @@ body:has(.block-invest-hero) {
 		position: relative;
 
 		@include mobile {
-			margin-top: 40px;
+			margin-top: 36px;
 		}
 
 		&::before {
@@ -1861,17 +2034,27 @@ body:has(.block-invest-hero) {
 		cursor: pointer;
 		font-size: 18px;
 		font-weight: 500;
-		background: #000E0D;
-		box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.21);
-		border-radius: 5px;
-		transition: $duration;
-		border: 1px solid rgba($green, .5);
 		user-select: none;
+
+		@include mobile {
+			font-size: 16px;
+		}
+
+		&:last-child {
+			.tab-content-wrapper {
+				@include mobile {
+					padding-bottom: 0;
+				}
+			}
+		}
 
 		&.active {
 			pointer-events: none;
-			background: rgba(0, 186, 122, 0.12);
-			box-shadow: 0px 0px 10px rgba(11, 179, 121, 0.49), inset 0px 3px 15px rgba(11, 179, 121, 0.4);
+
+			.tab-selector-inner {
+				background: rgba(0, 186, 122, 0.12);
+				box-shadow: 0px 0px 10px rgba(11, 179, 121, 0.49), inset 0px 3px 15px rgba(11, 179, 121, 0.4);
+			}
 
 			.toggler {
 				&::after {
@@ -1884,6 +2067,7 @@ body:has(.block-invest-hero) {
 				grid-template-rows: 1fr;
 			}
 		}
+
 		&-inner {
 			height: 75px;
 			width: 100%;
@@ -1892,6 +2076,18 @@ body:has(.block-invest-hero) {
 			padding-left: 18px;
 			padding-right: 24px;
 			gap: 20px;
+			background: #000E0D;
+			box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.21);
+			border-radius: 5px;
+			transition: $duration;
+			border: 1px solid rgba($green, .5);
+
+			@include mobile {
+				height: 66px;
+				padding-left: 16px;
+				padding-right: 20px;
+				gap: 16px;
+			}
 		}
 
 		&-mobile-content {
@@ -1909,6 +2105,17 @@ body:has(.block-invest-hero) {
 	.icon {
 		width: 40px;
 		flex-shrink: 0;
+
+		@include mobile {
+			width: 36px;
+		}
+
+		svg {
+			@include mobile {
+				max-width: 36px;
+				max-height: 36px;
+			}
+		}
 	}
 
 	.toggler {
@@ -1917,6 +2124,11 @@ body:has(.block-invest-hero) {
 		position: relative;
 		margin-left: auto;
 		flex-shrink: 0;
+
+		@include mobile {
+			width: 26px;
+			height: 26px;
+		}
 
 		&::before,
 		&::after {
@@ -1931,6 +2143,12 @@ body:has(.block-invest-hero) {
 			top: 15px;
 			left: 6px;
 			transform-origin: center center;
+
+			@include mobile {
+				width: 16px;
+				top: 13px;
+				left: 5px;
+			}
 		}
 	}
 
@@ -1969,28 +2187,43 @@ body:has(.block-invest-hero) {
 		&-content-wrapper {
 			@include mobile {
 				// for mobile selectors
-				padding: 16px 16px 24px;
+				padding: 36px 0 30px;
 				display: flex;
 				flex-direction: column;
-				gap: 24px;
+				gap: 16px;
+			}
+
+			h3 {
+				font-size: 24px;
+				font-weight: 500;
+				max-width: 580px;
+				font-family: $main-font;
+				text-transform: initial;
+
+				@include mobile {
+					font-size: 18px;
+				}
+			}
+
+			p {
+				display: block;
+				font-size: 18px;
+				font-weight: 400;
+
+				@include mobile {
+					font-size: 16px;
+				}
+
+				&:not(:first-child) {
+					margin-top: 24px;
+
+					@include mobile {
+						margin-top: 0;
+					}
+				}
 			}
 		}
 
-		h3 {
-			font-size: 24px;
-			font-weight: 500;
-			max-width: 580px;
-			font-family: $main-font;
-			text-transform: initial;
-		}
-		p {
-			display: block;
-			font-size: 18px;
-
-			&:not(:first-child) {
-				margin-top: 24px;
-			}
-		}
 	}
 }
 
@@ -2033,7 +2266,7 @@ body:has(.block-invest-hero) {
 		max-width: 940px;
 
 		@include mobile {
-			margin-top: 40px;
+			margin-top: 36px;
 		}
 	}
 
@@ -2048,24 +2281,6 @@ body:has(.block-invest-hero) {
 	.swiper {
 		&-container {
 			position: relative;
-			// &::before,
-			// &:after {
-			// 	content: '';
-			// 	position: absolute;
-			// 	top: 0;
-			// 	bottom: 0;
-			// 	width: 160px;
-			// 	background: linear-gradient(90deg,rgba(7, 39, 38, 0) 0%, rgba(7, 39, 38, 1) 100%);
-			// }
-
-			// &::before {
-			// 	left: 0;
-			// 	transform: rotate(180deg);
-			// }
-
-			// &:after {
-			// 	right: 0;
-			// }
 		}
 		&-slide {
 			width: 460px;
@@ -2133,6 +2348,10 @@ body:has(.block-invest-hero) {
 		&-pagination {
 			margin-top: 36px;
 
+			@include mobile {
+				margin-top: 20px;
+			}
+
 			&-bullet {
 				background-color: $green !important;
 			}
@@ -2145,9 +2364,12 @@ body:has(.block-invest-hero) {
 		border-radius: 25px;
 		padding: 30px 32px;
 		border: 1px solid rgba(#fff, .5);
-		font-size: 18px;
 		line-height: 1.38;
 		height: 100%;
+
+		@include mobile {
+			padding: 30px 20px;
+		}
 
 		&.is-descr-overflow {
 			.person-card-descr {
@@ -2178,6 +2400,10 @@ body:has(.block-invest-hero) {
 			font-family: $serif-font;
 			font-size: 32px;
 			font-weight: 500;
+
+			@include mobile {
+				font-size: 18px;
+			}
 		}
 
 		&-position {
@@ -2186,6 +2412,10 @@ body:has(.block-invest-hero) {
 			color: $green;
 			padding-bottom: 21px;
 			position: relative;
+
+			@include mobile {
+				font-size: 16px;
+			}
 
 			&::after {
 				content: '';
@@ -2200,6 +2430,13 @@ body:has(.block-invest-hero) {
 		&-descr {
 			margin-top: 20px;
 			max-width: 370px;
+			font-size: 18px;
+			font-weight: 400;
+
+			@include mobile {
+				font-size: 16px;
+				line-height: 1.5;
+			}
 		}
 
 		&-expand {
@@ -2211,6 +2448,12 @@ body:has(.block-invest-hero) {
 			font-weight: 600;
 			display: none;
 			cursor: pointer;
+			font-size: 18px;
+
+			@include mobile {
+				margin-top: 12px;
+				font-size: 16px;
+			}
 
 			&::before {
 				content: '';
