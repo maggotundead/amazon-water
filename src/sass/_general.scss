@@ -166,3 +166,13 @@ main {
 .text-centered {
     text-align: center;
 }
+
+br {
+    &.mobile-only {
+        display: none;
+
+        @include mobile {
+            display: block;
+        }
+    }
+}
